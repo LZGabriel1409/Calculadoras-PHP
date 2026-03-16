@@ -10,5 +10,8 @@
     <nav>
         <a href="imc.php"></a>
     </nav>
+    <nav>
+        <a href="media.php"></a>
+    </nav>
 </body>
 </html>
