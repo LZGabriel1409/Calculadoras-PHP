@@ -8,10 +8,10 @@
 <body>
     <h1>Calculadoras</h1>
     <nav>
-        <a href="imc.php"></a>
+        <a href="imc.php">IMC</a>
     </nav>
     <nav>
-        <a href="media.php"></a>
+        <a href="media.php">Media de alunos</a>
     </nav>
 </body>
 </html>
