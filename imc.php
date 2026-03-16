@@ -1,37 +1,50 @@
-<?php
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2>Calculadora de IMC</h2>
+    <form method="POST" action="imc.php">
+        <label for="peso">Peso (kg)</label>
+        <input name="peso" id="peso" type="text" />
+        
+        <label for="altura">Altura (m)</label>
+        <input name="altura" id="altura" type="text" />
 
-$peso = 65;
-$altura = 1.80;
+        <button type="submit">Calcular</button>
+    </form>
 
-$imc = $peso / ($altura * $altura);
+    <?php
+    if($_POST){
+        $peso = $_POST['peso'];
+        $altura = $_POST['altura'];
 
-echo "<h1>IMC</h1>";
-echo "<p>peso: $peso kg</p>";
-echo "<p>altura: $altura m</p>";
-echo "<h2>IMC: " . number_format($imc, 2);
+        $imc = $peso / ($altura * $altura);
 
-if($imc < 18.5){
-    echo "<p>Magreza</p>";
-}
-else{
-    if($imc > 18.5 && $imc < 24.9){
-        echo "<p>Normal</p>";
-    }else{
-        if($imc > 25 && $imc < 29.9){
-            echo "<p>Sobrepeso</p>";
+        echo "<p>Seu Peso: $peso kg</p>";
+        echo "<p>Sua altura: $altura m</p>";
+        echo "<h2>Seu IMC: " . number_format($imc, 2, ",");
+        
+        if($imc < 18.5){
+            echo "<p>Estado: Magreza</p>";
         }
-        else{
-            if($imc > 30 && $imc < 34.9){
-                echo "<p>Obesidade Grau I</p>";
-            }
-            else{
-                if($imc > 35 && $imc <39.9){
-                    echo "<p>Obesidade Grau II</p>";
-                }
-                else{
-                    echo "<p>Obesidade Grau III</p>";
-                };
-            };
-        };
+        else{if($imc > 18.5 && $imc < 24.9){
+                echo "<p>Estado: Normal</p>";
+        }else{if($imc > 25 && $imc < 29.9){
+                echo "<p>Estado: Sobrepeso</p>";
+        }else{if($imc > 30 && $imc < 34.9){
+                echo "<p>Estado: Obesidade Grau I</p>";
+        }else{if($imc > 35 && $imc <39.9){
+                echo "<p>Estado: Obesidade Grau II</p>";
+        }else{
+                echo "<p>Estado: Obesidade Grau III</p>";
+        };};};};};
     };
-};
+    ?>
+</body>
+</html>
