@@ -46,5 +46,9 @@
         };};};};};
     };
     ?>
+    <br><br>
+    <nav>
+        <a href="index.php">Voltar ao Menu</a>
+    </nav>
 </body>
 </html>
