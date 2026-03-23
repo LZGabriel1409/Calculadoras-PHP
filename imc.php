@@ -23,28 +23,37 @@
     if($_POST){
         $peso = $_POST['peso'];
         $altura = $_POST['altura'];
-
         $imc = $peso / ($altura * $altura);
 
-        echo "<p>Seu Peso: $peso kg</p>";
-        echo "<p>Sua altura: $altura m</p>";
-        echo "<h2>Seu IMC: " . number_format($imc, 2, ",");
-        
-        if($imc < 18.5){
-            echo "<p>Estado: Magreza</p>";
-        }
-        else{if($imc > 18.5 && $imc < 24.9){
-                echo "<p>Estado: Normal</p>";
-        }else{if($imc > 25 && $imc < 29.9){
-                echo "<p>Estado: Sobrepeso</p>";
-        }else{if($imc > 30 && $imc < 34.9){
-                echo "<p>Estado: Obesidade Grau I</p>";
-        }else{if($imc > 35 && $imc <39.9){
-                echo "<p>Estado: Obesidade Grau II</p>";
-        }else{
-                echo "<p>Estado: Obesidade Grau III</p>";
-        };};};};};
+        header("Location: imc.php?peso=" . number_format($peso, 2) . "&altura=" . number_format($altura, 2) . "&imc=" . number_format($imc, 2));
+        exit;
     };
+    
+    if (isset($_GET['peso'])){
+        echo "<p>Seu Peso: " . $_GET['peso'] . "kg</p>";
+    }
+    if (isset($_GET['altura'])){
+        echo "<p>Sua altura: " . $_GET['altura'] . "m</p>";
+    }
+    if (isset($_GET['imc'])){
+            echo "<h2>Seu IMC: " . $_GET['imc'] . "</h2>";
+            if($_GET['imc'] < 18.5){
+                echo "<h3>Estado: Magreza</h3>";
+            }
+            else{if($_GET['imc'] > 18.5 && $_GET['imc'] < 24.9){
+                    echo "<h3>Estado: Normal</h3>";
+            }else{if($_GET['imc'] > 25 && $_GET['imc'] < 29.9){
+                    echo "<h3>Estado: Sobrepeso</h3>";
+            }else{if($_GET['imc'] > 30 && $_GET['imc'] < 34.9){
+                    echo "<h3>Estado: Obesidade Grau I</h3>";
+            }else{if($_GET['imc'] > 35 && $_GET['imc'] <39.9){
+                    echo "<h3>Estado: Obesidade Grau II</h3>";
+            }else{
+                echo "<h3>Estado: Obesidade Grau III</h3>";
+            }}}}}
+    }
+        
+
     ?>
     <br><br>
     <nav>
