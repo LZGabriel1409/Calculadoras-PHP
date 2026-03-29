@@ -39,18 +39,17 @@
             echo "<h2>Seu IMC: " . $_GET['imc'] . "</h2>";
             if($_GET['imc'] < 18.5){
                 echo "<h3>Estado: Magreza</h3>";
-            }
-            else{if($_GET['imc'] > 18.5 && $_GET['imc'] < 24.9){
+            } else if($_GET['imc'] > 18.5 && $_GET['imc'] < 24.9){
                     echo "<h3>Estado: Normal</h3>";
-            }else{if($_GET['imc'] > 25 && $_GET['imc'] < 29.9){
+            } else if($_GET['imc'] > 25 && $_GET['imc'] < 29.9){
                     echo "<h3>Estado: Sobrepeso</h3>";
-            }else{if($_GET['imc'] > 30 && $_GET['imc'] < 34.9){
+            } else if($_GET['imc'] > 30 && $_GET['imc'] < 34.9){
                     echo "<h3>Estado: Obesidade Grau I</h3>";
-            }else{if($_GET['imc'] > 35 && $_GET['imc'] <39.9){
+            } else if($_GET['imc'] > 35 && $_GET['imc'] <39.9){
                     echo "<h3>Estado: Obesidade Grau II</h3>";
-            }else{
+            } else{
                 echo "<h3>Estado: Obesidade Grau III</h3>";
-            }}}}}
+            }
     }
         
 
